@@ -83,5 +83,12 @@ class RestaurantTest{
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+    @Test
+    public void calculate_total_item_cost(){
+        setUpMockRestaurant();
+        int totalPrice = restaurant.calculateTotalOrderValue();
+        assertEquals(600,totalPrice);
+        System.out.println("total Order value : Rs"+ totalPrice);
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }

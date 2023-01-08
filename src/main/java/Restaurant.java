@@ -34,6 +34,14 @@ public class Restaurant {
         //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
     }
 
+    public int calculateTotalOrderValue(){  // new method implemented
+        int totalPrice = 0;
+        for(Item item: menu){
+            totalPrice+=item.getPrice();
+        }
+        return totalPrice;
+    }
+
     private Item findItemByName(String itemName){
         for(Item item: menu) {
             if(item.getName().equals(itemName))
